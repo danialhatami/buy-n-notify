@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
@@ -17,9 +17,7 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('user', [UserController::class, 'profile'])->middleware('auth:sanctum')->name('user.profile.get');
 
 Route::prefix('order')->name('order.')->middleware('auth:sanctum')->group(function () {
     Route::post('', [OrderController::class, 'create'])->name('create.post');

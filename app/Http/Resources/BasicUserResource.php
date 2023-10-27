@@ -18,7 +18,8 @@ class BasicUserResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
-            'mobile' => $this->mobile
+            'mobile' => $this->mobile,
+            'balance' => number_format($this->resource->getBalance())
         ];
     }
 }
