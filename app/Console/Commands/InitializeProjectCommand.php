@@ -38,6 +38,10 @@ class InitializeProjectCommand extends Command
         $this->info('Generating Application Key...');
         Artisan::call('key:generate');
 
+        $this->info('Enabling Telescope...');
+        Artisan::call('telescope:install');
+        Artisan::call('migrate');
+
         $this->info('Generating Test Token...');
         $createTestTokenProcess = new Process(['php', 'artisan', 'token:test']);
         $createTestTokenProcess->run();
