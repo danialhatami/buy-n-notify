@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
@@ -20,6 +18,6 @@ class ProductSeeder extends Seeder
                 'name' => 'Product Number one'
             ]
         )
-            ->create();
+            ->count(10)->create();
     }
 }
