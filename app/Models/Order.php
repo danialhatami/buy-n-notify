@@ -33,13 +33,19 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'status',
+        'user_id',
+        'product_id',
+    ];
+
     protected $casts = [
         'status' => OrderStatus::class
     ];
 
     public function user(): BelongsTo
     {
-       return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function product(): BelongsTo
