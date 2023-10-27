@@ -3,7 +3,7 @@
 <p align="center">
 <a href="https://github.com/danialhatami/buy-n-notify/actions"><img src="https://github.com/danialhatami/buy-n-notify/actions/workflows/laravel.yml/badge.svg" alt="Build Status"></a>
 <a href="https://github.com/danialhatami/buy-n-notify/actions"><img src="https://img.shields.io/badge/PHP-8.1-blue" alt="PHP"></a>
-<a href="https://github.com/danialhatami/buy-n-notify/"><img src="https://img.shields.io/badge/laravel-10-red" alt="Laravel"></a>
+<a href="https://github.com/danialhatami/buy-n-notify/"><img src="https://img.shields.io/badge/Laravel-10-red" alt="Laravel"></a>
 </p>
 
 This is an entertaining project that allows users to 'purchase' imaginary products and experience the whimsical world of SMS service selection. No actual implementation of services, just pure coding fun
