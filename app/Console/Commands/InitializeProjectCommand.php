@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Artisan;
 use Illuminate\Console\Command;
+use Symfony\Component\Process\Process;
 
 class InitializeProjectCommand extends Command
 {
@@ -34,7 +35,16 @@ class InitializeProjectCommand extends Command
         $this->info('Running Database Seeder...');
         Artisan::call('db:seed');
 
+        $this->info('Generating Application Key...');
+        Artisan::call('key:generate');
+
         $this->info('Generating Test Token...');
-        Artisan::call('token:test');
+        $createTestTokenProcess = new Process(['php', 'artisan', 'token:test']);
+        $createTestTokenProcess->run();
+        if ($createTestTokenProcess->isSuccessful()) {
+            $this->info($createTestTokenProcess->getOutput());
+        } else {
+            $this->error('Failed to generate token');
+        }
     }
 }
