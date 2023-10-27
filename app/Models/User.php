@@ -3,11 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 /**
  * App\Models\User
@@ -78,8 +78,7 @@ class User extends Authenticatable
     public function getBalance(): int
     {
         return Cache::remember("user_{$this->id}_balance", 10, function () {
-            return Transaction::where('model_type', static::class)
-                ->where('model_id', $this->id)
+            return Transaction::where('user_id', $this->id)
                 ->sum('amount');
         });
     }
