@@ -21,7 +21,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'email' => 'test@mail.com',
+            'email' => fake()->email(),
             'email_verified_at' => now(),
             'mobile' => fake()->numerify('###########'),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
