@@ -11,12 +11,12 @@
         "laravel/framework": "^10.10",
         "laravel/prompts": "^0.1.12",
         "laravel/sanctum": "^3.3",
-        "laravel/telescope": "^4.16",
         "laravel/tinker": "^2.8"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
         "fakerphp/faker": "^1.9.1",
+        "laravel/telescope": "^4.16",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
@@ -53,9 +53,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-                "laravel/telescope"
-            ]
+            "dont-discover": []
         }
     },
     "config": {
