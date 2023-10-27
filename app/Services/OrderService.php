@@ -35,7 +35,7 @@ class OrderService
     public function payOrder(Order $order): void
     {
         if ($order->status !== OrderStatus::CREATED) {
-            throw new \Exception();
+            throw new \Exception('Oops! This order is not in the "CREATED" status.');
         }
         $user = $order->user;
         $product = $order->product;
