@@ -36,6 +36,13 @@ class Transaction extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'amount',
+        'model_type',
+        'model_id',
+    ];
+
     public function model(): MorphTo
     {
         return $this->morphTo();
