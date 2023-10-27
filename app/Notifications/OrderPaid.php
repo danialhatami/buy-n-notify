@@ -20,7 +20,7 @@ class OrderPaid extends CustomNotification
 
     public function text(): string
     {
-        return trans('order.sms.order_paid', ['code' => $this->orderId]);
+        return 'order.sms.order_paid_id_' . $this->orderId;
     }
 
     public function via(): string
