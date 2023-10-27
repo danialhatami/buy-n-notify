@@ -46,7 +46,7 @@ class InitializeProjectCommand extends Command
         $createTestTokenProcess = new Process(['php', 'artisan', 'token:test']);
         $createTestTokenProcess->run();
         if ($createTestTokenProcess->isSuccessful()) {
-            $this->info($createTestTokenProcess->getOutput());
+            $this->warn($createTestTokenProcess->getOutput());
         } else {
             $this->error('Failed to generate token');
         }
