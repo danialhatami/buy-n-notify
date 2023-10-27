@@ -14,22 +14,33 @@ This project was created purely for entertainment and as a fun hobby! Please res
 # kickstart
 To get started with this project, follow these steps:
 
-1. Begin by cloning this repository to your local machine.
+1. Begin by cloning this repository to your local machine
 
 ```bash
 git clone https://github.com/danialhatami/buy-n-notify.git
 ```
-2. install dependencies!
+2. Navigate to the project directory
+
+```bash
+cd buy-n-notify
+```
+
+3. Copy the environment file and modify the database parameters
+```bash 
+cp .env.example .env
+```
+
+4. install dependencies
 ```bash
 composer install 
 ```
-3. Get the party essentials!
+5. Get the party essentials!
 ```bash
 php artisan project:init
 ```
-Your API token will be generated, so make sure to copy it.
+⚠️ Your API token will be generated; make sure to copy it.
 
-4. Fire up!
+6. Fire up!
 ```bash
 php artisan serve
 ```
@@ -40,7 +51,7 @@ php artisan serve
 Explore our API documentation at the following address:
 
 ```html
-[laravel_address:port]/api/docs
+[laravel_address:port]/docs/api#/
 ```
 
 ### Telescope Access
