@@ -21,12 +21,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('order')->middleware('auth:sanctum')->group(function () {
-    Route::post('', [OrderController::class, 'create']);
-    Route::post('{order}/pay', [OrderController::class, 'payOrder']);
+Route::prefix('order')->name('order.')->middleware('auth:sanctum')->group(function () {
+    Route::post('', [OrderController::class, 'create'])->name('create.post');
+    Route::post('{order}/pay', [OrderController::class, 'payOrder'])->name('pay.post');
 });
 
-Route::get('products', [ProductController::class, 'index']);
-Route::get('transactions', [TransactionController::class, 'index'])->middleware('auth:sanctum');
+Route::get('products', [ProductController::class, 'index'])->name('product.index.get');
+Route::get('transactions', [TransactionController::class, 'index'])->middleware('auth:sanctum')->name('transaction.index.get');
 
 
